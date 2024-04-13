@@ -1,1 +1,4 @@
-docker build -t iccat/apps/catalogue:0.1.0 .
+docker build -t iccat/apps/catalogue:0.1.0 \
+             --build-arg GITLAB_AUTH_TOKEN=$GITLAB_AUTH_TOKEN \
+             --progress=plain \
+             .
