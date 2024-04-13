@@ -1,0 +1,27 @@
+{
+    "id": "CB71FE4B",
+    "path": "D:/Git workspaces/ICCAT/data_dissemination/interactive_catalogues/initialize_data.R",
+    "project_path": "initialize_data.R",
+    "type": "r_source",
+    "hash": "2365997753",
+    "contents": "",
+    "dirty": false,
+    "created": 1712939110176.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "tempName": "Untitled2",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "11,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712939117,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712939117161,
+    "read_only": false,
+    "read_only_alternatives": []
+}

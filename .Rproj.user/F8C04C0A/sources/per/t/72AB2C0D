@@ -1,0 +1,26 @@
+{
+    "id": "72AB2C0D",
+    "path": "D:/Git workspaces/ICCAT/data_dissemination/interactive_catalogues/shiny/www/custom.css",
+    "project_path": "shiny/www/custom.css",
+    "type": "css",
+    "hash": "370861994",
+    "contents": "",
+    "dirty": false,
+    "created": 1713006405305.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "4,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1713007450,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1713007450886,
+    "read_only": false,
+    "read_only_alternatives": []
+}

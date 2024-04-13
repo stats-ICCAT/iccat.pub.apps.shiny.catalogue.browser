@@ -1,0 +1,24 @@
+{
+    "id": "E1F552A2",
+    "path": "D:/Git workspaces/ICCAT/data_dissemination/interactive_catalogues/shiny/conf/shiny-server.conf",
+    "project_path": "shiny/conf/shiny-server.conf",
+    "type": "text",
+    "hash": "2776716735",
+    "contents": "",
+    "dirty": false,
+    "created": 1713001921912.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712934613,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712934613,
+    "read_only": false,
+    "read_only_alternatives": []
+}
