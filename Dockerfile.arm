@@ -25,6 +25,9 @@ ENV R_LIBS_USER /R/lib
 
 RUN R -e "install.packages(c('bslib', 'cachem', 'commonmark', 'crayon', 'data.table', 'devtools', 'digest', 'fastmap', 'flextable', 'fontawesome', 'fs', 'glue', 'httpuv', 'jsonlite', 'later', 'magrittr', 'odbc', 'officer', 'openxlsx', 'Rcpp', 'remotes', 'sass', 'shiny', 'shinycssloaders', 'shinyjs', 'shinyWidgets', 'sourcetools', 'stringi', 'stringr', 'DT'), repos = 'http://cran.us.r-project.org')"
 
+RUN apt-get -y install unixodbc-dev
+RUN R -e "install.packages(c('odbc', 'colorspace'), repos = 'http://cran.us.r-project.org')"
+
 # Sets the working directory to the shiny-server root folder
 WORKDIR /srv/shiny-server
 
