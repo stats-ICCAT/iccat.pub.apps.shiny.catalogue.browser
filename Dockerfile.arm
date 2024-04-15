@@ -18,9 +18,6 @@ RUN apt-get -y install unixodbc-dev
 
 WORKDIR /
 
-RUN mkdir -p /R/lib
-ENV R_LIBS_USER /R/lib
-
 # Installs all required R packages (and their dependencies) starting from those hat are available on the remote repo
 # and then from the locally available libs (for the time being)
 
