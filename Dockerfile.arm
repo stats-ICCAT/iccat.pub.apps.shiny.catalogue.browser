@@ -52,6 +52,7 @@ ENV GITLAB_AUTH_TOKEN=$GITLAB_AUTH_TOKEN
 COPY ./shiny interactive_catalogue
 
 # Updates the R libs
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN Rscript update_libs.R
 
 # Copies the catalogue data under the Shiny server app folder
