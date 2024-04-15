@@ -14,6 +14,7 @@ RUN apt-get -y install libharfbuzz-dev
 RUN apt-get -y install libfribidi-dev
 RUN apt-get -y install libgit2-dev
 RUN apt-get -y install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+RUN apt-get -y install unixodbc-dev
 
 WORKDIR /
 
@@ -23,10 +24,7 @@ ENV R_LIBS_USER /R/lib
 # Installs all required R packages (and their dependencies) starting from those hat are available on the remote repo
 # and then from the locally available libs (for the time being)
 
-RUN R -e "install.packages(c('bslib', 'cachem', 'commonmark', 'crayon', 'data.table', 'devtools', 'digest', 'fastmap', 'flextable', 'fontawesome', 'fs', 'glue', 'httpuv', 'jsonlite', 'later', 'magrittr', 'odbc', 'officer', 'openxlsx', 'Rcpp', 'remotes', 'sass', 'shiny', 'shinycssloaders', 'shinyjs', 'shinyWidgets', 'sourcetools', 'stringi', 'stringr', 'DT'), repos = 'http://cran.us.r-project.org')"
-
-RUN apt-get -y install unixodbc-dev
-RUN R -e "install.packages(c('odbc', 'colorspace'), repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages(c('bslib', 'cachem', 'colorspace', 'commonmark', 'crayon', 'data.table', 'devtools', 'digest', 'fastmap', 'flextable', 'fontawesome', 'fs', 'glue', 'httpuv', 'jsonlite', 'later', 'magrittr', 'odbc', 'officer', 'openxlsx', 'Rcpp', 'remotes', 'sass', 'shiny', 'shinycssloaders', 'shinyjs', 'shinyWidgets', 'sourcetools', 'stringi', 'stringr', 'DT'), repos = 'http://cran.us.r-project.org')"
 
 # Sets the working directory to the shiny-server root folder
 WORKDIR /srv/shiny-server
