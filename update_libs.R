@@ -1,7 +1,5 @@
 library(devtools)
 
-#options(download.file.method = "libcurl")
-
 GITLAB_AUTH_TOKEN = Sys.getenv("GITLAB_AUTH_TOKEN")
 
 devtools::install_gitlab("iccat-r-tests/libs/public/iccat.pub.base",      auth_token = GITLAB_AUTH_TOKEN)
