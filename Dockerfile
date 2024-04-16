@@ -90,7 +90,7 @@ RUN Rscript initialize_data.R
 COPY *.RData interactive_catalogue
 
 # Sets the Shiny log level to 'TRACE', stores the environment variable in .Renviron and copies that file under the 'shiny' user folder
-RUN echo SHINY_LOG_LEVEL = TRACE >> /home/shiny/.Renviron && chown shiny.shiny /home/shiny/.Renviron
+RUN echo SHINY_LOG_LEVEL = TRACE >> /home/shiny/.Renviron && chown shiny:shiny /home/shiny/.Renviron
 
 # Removes an unnecessary directory and files under the Shiny app folder
 RUN rm -rf *.R
