@@ -37,7 +37,8 @@ ui = function() {
                                      choices = ALL_SPECIES,
                                      search = TRUE,
                                      showValueAsTags = TRUE,
-                                     selected = "BFT")
+                                     selected = "BFT",
+                                     updateOn = "close")
                 ),
                 column(
                   width = 2,
@@ -46,7 +47,8 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_STOCK_AREAS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE)
+                                     showValueAsTags = TRUE,
+                                     updateOn = "close")
                 ),
                 column(
                   width = 2,
@@ -55,7 +57,8 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_FLAGS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE)
+                                     showValueAsTags = TRUE,
+                                     updateOn = "close")
                 ),
                 column(
                   width = 2,
@@ -64,7 +67,8 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_GEAR_GROUPS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE)
+                                     showValueAsTags = TRUE,
+                                     updateOn = "close")
                 ),
                 column(
                   width = 1,
