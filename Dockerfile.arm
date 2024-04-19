@@ -14,14 +14,13 @@ RUN apt-get -y install libharfbuzz-dev
 RUN apt-get -y install libfribidi-dev
 RUN apt-get -y install libgit2-dev
 RUN apt-get -y install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
-RUN apt-get -y install unixodbc-dev
 
 WORKDIR /
 
 # Installs all required R packages (and their dependencies) starting from those hat are available on the remote repo
 # and then from the locally available libs (for the time being)
 
-RUN R -e "install.packages(c('bslib', 'cachem', 'colorspace', 'commonmark', 'crayon', 'data.table', 'devtools', 'digest', 'fastmap', 'flextable', 'fontawesome', 'fs', 'glue', 'httpuv', 'jsonlite', 'later', 'magrittr', 'odbc', 'officer', 'openxlsx', 'Rcpp', 'remotes', 'sass', 'shiny', 'shinycssloaders', 'shinyjs', 'shinyWidgets', 'sourcetools', 'stringi', 'stringr', 'DT'), repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages(c('bslib', 'cachem', 'colorspace', 'commonmark', 'crayon', 'data.table', 'devtools', 'digest', 'fastmap', 'flextable', 'fontawesome', 'fs', 'glue', 'httpuv', 'jsonlite', 'later', 'magrittr', 'officer', 'openxlsx', 'Rcpp', 'remotes', 'sass', 'shiny', 'shinycssloaders', 'shinyjs', 'shinyWidgets', 'sourcetools', 'stringi', 'stringr', 'colorspace', 'RColorBrewer', 'DT'), repos = 'http://cran.us.r-project.org')"
 
 # Sets the working directory to the shiny-server root folder
 WORKDIR /srv/shiny-server
@@ -50,11 +49,8 @@ COPY ./shiny interactive_catalogue
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 RUN Rscript update_libs.R
 
-# Copies the catalogue data under the Shiny server app folder
-COPY *.RData interactive_catalogue
-
 # Sets the Shiny log level to 'TRACE', stores the environment variable in .Renviron and copies that file under the 'shiny' user folder
-RUN echo SHINY_LOG_LEVEL = TRACE >> /home/shiny/.Renviron && \ 
+RUN echo SHINY_LOG_LEVEL = TRACE >> /home/shiny/.Renviron && \
     chown shiny:shiny /home/shiny/.Renviron && \
     chown shiny:shiny /etc/shiny-server
 

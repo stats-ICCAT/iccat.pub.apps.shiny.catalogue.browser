@@ -1,12 +1,14 @@
+library(stringr)
+
+library(iccat.pub.base)
+library(iccat.pub.data)
+library(iccat.pub.viz)
+
 library(shiny)
 library(shinyjs)
 library(shinyWidgets)
 library(shinycssloaders)
 library(DT)
-
-library(iccat.pub.base)
-library(iccat.pub.data)
-library(iccat.dev.data)
 
 ALL_SPECIES     = setNames(as.character(REF_SPECIES$CODE),     paste(REF_SPECIES$CODE,     "-", REF_SPECIES$NAME_EN))
 ALL_STOCK_AREAS = setNames(as.character(REF_STOCK_AREAS$CODE), paste(REF_STOCK_AREAS$CODE, "-", REF_STOCK_AREAS$NAME_EN))

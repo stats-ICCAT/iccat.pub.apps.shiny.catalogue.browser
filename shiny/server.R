@@ -124,7 +124,7 @@ server = function(input, output, session) {
       start = Sys.time()
 
       catalogue_table =
-        catalogue.table(filtered_catalogue) %>%
+        catalogue.viz.table(filtered_catalogue) %>%
         fontsize(part = "all", size = 8) %>%
         padding( part = "all", padding = 2)
 
