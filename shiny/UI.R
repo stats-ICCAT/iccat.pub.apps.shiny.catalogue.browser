@@ -31,18 +31,40 @@ ui = function() {
               fluidRow(
                 column(
                   width = 3,
-                  selectInput("species", "Species",
-                              width = "100%",
-                              choices = ALL_SPECIES,
-                              selected = "BFT",
-                              multiple = TRUE)
+                  virtualSelectInput("species", "Species",
+                                     width = "100%",
+                                     multiple = TRUE,
+                                     choices = ALL_SPECIES,
+                                     search = TRUE,
+                                     showValueAsTags = TRUE,
+                                     selected = "BFT")
                 ),
                 column(
                   width = 2,
-                  selectInput("stocks", "Stock(s)",
-                              width = "100%",
-                              choices = ALL_STOCK_AREAS,
-                              multiple = TRUE)
+                  virtualSelectInput("stocks", "Stock(s)",
+                                     width = "100%",
+                                     multiple = TRUE,
+                                     choices = ALL_STOCK_AREAS,
+                                     search = TRUE,
+                                     showValueAsTags = TRUE)
+                ),
+                column(
+                  width = 2,
+                  virtualSelectInput("flags", "Flag(s)",
+                                     width = "100%",
+                                     multiple = TRUE,
+                                     choices = ALL_FLAGS,
+                                     search = TRUE,
+                                     showValueAsTags = TRUE)
+                ),
+                column(
+                  width = 2,
+                  virtualSelectInput("gearGroups", "Gear group(s)",
+                                     width = "100%",
+                                     multiple = TRUE,
+                                     choices = ALL_GEAR_GROUPS,
+                                     search = TRUE,
+                                     showValueAsTags = TRUE)
                 ),
                 column(
                   width = 1,
@@ -60,20 +82,6 @@ ui = function() {
                                max   = 100,
                                value =  90,
                                step  =    .5)
-                ),
-                column(
-                  width = 2,
-                  selectInput("flags", "Flag(s)",
-                              width = "100%",
-                              choices = ALL_FLAGS,
-                              multiple = TRUE)
-                ),
-                column(
-                  width = 2,
-                  selectInput("gearGroups", "Gear group(s)",
-                              width = "100%",
-                              choices = ALL_GEAR_GROUPS,
-                              multiple = TRUE)
                 )
               )
             )

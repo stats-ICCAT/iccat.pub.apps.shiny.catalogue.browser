@@ -36,3 +36,8 @@
 	-moz-box-shadow:    -1px 10px 25px -11px rgba(0,0,0,0.75);
 	box-shadow:         -1px 10px 25px -11px rgba(0,0,0,0.75);
  }
+
+.vscomp-dropbox-container  {
+  z-index:99999 !important;
+
+}

@@ -145,7 +145,7 @@ server = function(input, output, session) {
 
       components = components[which(components != "")]
 
-      paste0(paste0(components, collapse = "_"), ".csv")
+      paste0("catalogue_", paste0(components, collapse = "_"), ".csv")
     },
     content = function(file) {
       write.csv(filtered_catalogue_data(), file, row.names = FALSE, na = "")
