@@ -1,6 +1,6 @@
 #catalogue {
   height: calc(100vh - 205px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #glasspane {
