@@ -34,11 +34,10 @@ ui = function() {
                   virtualSelectInput("species", "Species",
                                      width = "100%",
                                      multiple = TRUE,
+                                     autoSelectFirstOption = TRUE,
                                      choices = ALL_SPECIES,
                                      search = TRUE,
-                                     showValueAsTags = TRUE,
-                                     selected = "BFT",
-                                     updateOn = "close")
+                                     showValueAsTags = TRUE)
                 ),
                 column(
                   width = 2,
@@ -47,8 +46,7 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_STOCK_AREAS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE,
-                                     updateOn = "close")
+                                     showValueAsTags = TRUE)
                 ),
                 column(
                   width = 2,
@@ -57,8 +55,7 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_FLAGS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE,
-                                     updateOn = "close")
+                                     showValueAsTags = TRUE)
                 ),
                 column(
                   width = 2,
@@ -67,8 +64,7 @@ ui = function() {
                                      multiple = TRUE,
                                      choices = ALL_GEAR_GROUPS,
                                      search = TRUE,
-                                     showValueAsTags = TRUE,
-                                     updateOn = "close")
+                                     showValueAsTags = TRUE)
                 ),
                 column(
                   width = 1,
