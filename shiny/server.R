@@ -134,8 +134,10 @@ server = function(input, output, session) {
       start = Sys.time()
 
       catalogue_table =
-        catalogue.viz.table(filtered_catalogue, truncate_years = FALSE) %>%
-        fontsize(part = "body", j = 11:ncol(filtered_catalogue), size = 7)
+        catalogue.viz.table(filtered_catalogue, truncate_years = FALSE,
+                            flag_separator_width = 2,
+                            default_font_size = 8,
+                            default_h_padding = 2, values_h_padding = 5) %>% padding(part = "header", padding.top = 5, padding.bottom = 5)
 
       end = Sys.time()
 
