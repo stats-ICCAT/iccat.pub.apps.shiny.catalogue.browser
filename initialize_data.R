@@ -1,7 +1,5 @@
 library(iccat.dev.data)
 
-LAST_N_YEARS = 100
-
 CA_ALL = catalogue.fn_genT1NC_CatalSCRS(species_codes    = NULL,
                                         stock_area_codes = NULL,
                                         year_from        = NA,

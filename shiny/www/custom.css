@@ -1,5 +1,5 @@
 #catalogue {
-  height: calc(100vh - 205px);
+  height: calc(100vh - 130px);
   overflow-y: auto;
 }
 
@@ -12,6 +12,56 @@
 	background-color: #99999933;
 
 	z-index: 10000;
+}
+
+table thead tr th:nth-child(1) {
+  width: 60px !important;
+  min-width: 60px !important;
+}
+
+table thead tr th:nth-child(2) {
+  width: 50px !important;
+  min-width: 50px !important;
+}
+
+table thead tr th:nth-child(3) {
+  width: 135px !important;
+  min-width: 135px !important;
+}
+
+table thead tr th:nth-child(4) {
+  width: 50px !important;
+  min-width: 50px !important;
+}
+
+table thead tr th:nth-child(5) {
+  width: 45px !important;
+  min-width: 45px !important;
+}
+
+table thead tr th:nth-child(6) {
+  width: 45px !important;
+  min-width: 45px !important;
+}
+
+table thead tr th:nth-child(7) {
+  width: 55px !important;
+  min-width: 55px !important;
+}
+
+table thead tr th:nth-child(8) {
+  width: 45px !important;
+  min-width: 45px !important;
+}
+
+table thead tr th:nth-child(9) {
+  width: 65px !important;
+  min-width: 65px !important;
+}
+
+table thead tr th:nth-child(10) {
+  width: 35px !important;
+  min-width: 35px !important;
 }
 
 .loading {
@@ -39,5 +89,4 @@
 
 .vscomp-dropbox-container  {
   z-index:99999 !important;
-
 }

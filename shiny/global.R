@@ -21,4 +21,7 @@ set_log_level(LOG_INFO)
 
 load("./CA_all.RData")
 
+MIN_YEAR = 1950 #min(CA_ALL$Year)
+MAX_YEAR = max(CA_ALL$Year)
+
 INFO(paste0(nrow(CA_ALL), " rows loaded from CA_ALL"))

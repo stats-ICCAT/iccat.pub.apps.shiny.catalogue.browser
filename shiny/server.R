@@ -43,12 +43,14 @@ server = function(input, output, session) {
         CA = CA[GearGrp %in% input$gearGroups]
       }
 
-      last_year  = max(CA$Year)
-      first_year = last_year - input$num_years + 1
+      first_year = input$years[1]
+      last_year  = input$years[2]
 
-      CA = CA[Year >= first_year]
+      CA = CA[Year >= first_year & Year <= last_year]
 
       start = Sys.time()
+
+      # Updates the fishery ranks...
 
       FR = CA[DSet == "1-t1", .(Qty = sum(Qty, na.rm = TRUE)), keyby = .(DSet, Species, FlagName, Status, Stock, GearGrp)]
       FR = FR[, avgQty := Qty / (last_year - first_year + 1)]
@@ -124,9 +126,8 @@ server = function(input, output, session) {
       start = Sys.time()
 
       catalogue_table =
-        catalogue.viz.table(filtered_catalogue) %>%
-        fontsize(part = "all", size = 8) %>%
-        padding( part = "all", padding = 2)
+        catalogue.viz.table(filtered_catalogue, truncate_years = FALSE) %>%
+        fontsize(part = "body", j = 11:ncol(filtered_catalogue), size = 7)
 
       end = Sys.time()
 
