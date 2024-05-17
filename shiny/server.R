@@ -62,6 +62,14 @@ server = function(input, output, session) {
       INFO(paste0("Filtered FR rows: ", nrow(FR)))
       INFO("Preparing catalogue...")
 
+      CA$Year =
+        factor(
+          CA$Year,
+          labels = first_year:last_year,
+          levels = first_year:last_year,
+          ordered = TRUE
+        )
+
       catalog =
         catalogue.compile(
           FR[avgQtyRatioCum <= input$max_perc_cum / 100.0],
