@@ -65,6 +65,17 @@ RUN adduser shiny sudo
 ENV SHINY_LOG_STDERR=1
 ENV SHINY_LOG_LEVEL=DEBUG
 
+# Fixing locales' issues once and for all
+RUN apt-get -y install locales locales-all
+
+RUN locale-gen en_US
+RUN locale-gen en_US.UTF-8
+RUN update-locale
+
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+
 # User running the Shiny server
 USER shiny
 
