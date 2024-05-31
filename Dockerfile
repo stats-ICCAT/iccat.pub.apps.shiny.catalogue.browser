@@ -19,6 +19,9 @@ RUN install2.r --error --skipinstalled \
     DT \
     devtools
 
+RUN install2.r --error --skipinstalled \
+    dplyr
+
 # Sets the working directory to the shiny-server root folder
 WORKDIR /srv/shiny-server
 
