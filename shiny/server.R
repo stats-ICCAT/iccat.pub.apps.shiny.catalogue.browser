@@ -152,7 +152,7 @@ server = function(input, output, session) {
                      paste0(input$stocks,     collapse = "+"),
                      paste0(input$flags,      collapse = "+"),
                      paste0(input$gearGroups, collapse = "+"),
-                     input$num_years)
+                     paste0(input$years,      collapse = "-"))
 
       components = components[which(components != "")]
 
