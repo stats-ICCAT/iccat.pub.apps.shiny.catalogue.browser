@@ -127,7 +127,9 @@ server = function(input, output, session) {
 
       filtered_catalogue = filtered_catalogue_data()
 
-      if(is.null(filtered_catalogue) || nrow(filtered_catalogue) == 0) return("No data available!")
+      validate(
+        need(!is.null(filtered_catalogue) & nrow(filtered_catalogue) > 0, "Current filtering criteria do not identify any record!")
+      )
 
       INFO("Catalogue (flex)table preparation...")
 
