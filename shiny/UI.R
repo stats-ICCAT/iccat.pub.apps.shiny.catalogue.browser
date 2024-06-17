@@ -75,6 +75,12 @@ ui = function() {
               fluidRow(
                 column(
                   width = 12,
+                  actionButton("resetFilters", "Reset all filters", icon = icon("filter-circle-xmark"))
+                )
+              ),
+              fluidRow(
+                column(
+                  width = 12,
                   h5(strong("Download current dataset:"))
                 )
               ),

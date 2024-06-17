@@ -15,6 +15,8 @@ server = function(input, output, session) {
   #  )
   #})
 
+  observeEvent(input$resetFilters, { session$reload() })
+
   catalogue_data = reactive({
     DEBUG("CD")
     INFO(paste0("Species: ", paste0(input$species, collapse = ", ")))
