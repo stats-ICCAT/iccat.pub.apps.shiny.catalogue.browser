@@ -160,7 +160,7 @@ server = function(input, output, session) {
 
       components = components[which(components != "")]
 
-      paste0("ICCAT_SCRS_catalogue_", paste0(components, collapse = "_"), ".csv.gz")
+      paste0("ICCAT_SCRS_", str_replace_all(META$LAST_UPDATE, "\\-", ""), "_catalogue_", paste0(components, collapse = "_"), ".csv.gz")
     },
     content = function(file) {
       write.csv(filtered_catalogue_data(), gzfile(file), row.names = FALSE, na = "")
