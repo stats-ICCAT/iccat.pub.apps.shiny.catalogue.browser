@@ -38,6 +38,7 @@ set_flextable_defaults(font.family = "Arial")
 
 set_log_level(LOG_INFO)
 
+load("./META.RData")
 load("./CA_all.RData")
 
 MIN_YEAR = 1950 #min(CA_ALL$Year)

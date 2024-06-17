@@ -1,5 +1,5 @@
 ui = function() {
-  TITLE = "ICCAT interactive species catalogue v1.0"
+  TITLE = paste0("ICCAT SCRS catalogue / T2CE / ", META$LAST_UPDATE)
   return(
     fluidPage(
       title = TITLE,
@@ -19,9 +19,8 @@ ui = function() {
             column(
               width = 8,
               h2(
-                img(src = "iccat-logo.jpg", height = "96px"),
-                span(TITLE),
-                downloadButton("downloadData", "Download")
+                img(src = "iccat-logo.jpg", height = "48px"),
+                span(TITLE)
               )
             )
           ),
@@ -70,6 +69,32 @@ ui = function() {
                                width = "100%",
                                min = 0, max = 100, value = 95,
                                step = .5)
+                )
+              ),
+              fluidRow(
+                column(
+                  width = 12,
+                  h5(strong("Download current dataset:"))
+                )
+              ),
+              fluidRow(
+                column(
+                  width = 4,
+                  downloadButton("downloadData", "Filtered", style = "width: 100px")
+                ),
+                column(
+                  width = 4,
+                  span("as ", style = "vertical-align: -5px",
+                       code(".csv.gz")
+                  )
+                )
+              ),
+              fluidRow(
+                column(
+                  width = 12,
+                  hr(),
+                  span("Data last updated on:"),
+                  strong(META$LAST_UPDATE)
                 )
               )
             ),
