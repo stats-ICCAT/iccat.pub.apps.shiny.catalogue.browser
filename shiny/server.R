@@ -19,6 +19,9 @@ server = function(input, output, session) {
 
   catalogue_data = reactive({
     DEBUG("CD")
+
+    INFO("== Filtering data - START ==")
+
     INFO(paste0("Species: ", paste0(input$species, collapse = ", ")))
     INFO(paste0("Stock  : ", paste0(input$stocks, collapse = ", ")))
 
@@ -98,6 +101,8 @@ server = function(input, output, session) {
 
     INFO(paste0("Completing preparation of catalog data: ", end_all - start_all))
 
+    INFO("== Filtering data - END ==")
+
     return(catalog)
   })
 
@@ -127,6 +132,8 @@ server = function(input, output, session) {
     renderUI({
       DEBUG("RUI")
 
+      INFO("== Producing output - START ==")
+
       validate(need(!is.null(input$species), "Please select at least one species!"))
 
       filtered_catalogue = filtered_catalogue_data()
@@ -148,6 +155,8 @@ server = function(input, output, session) {
       end = Sys.time()
 
       INFO(paste0("Catalogue (flex)table preparation: ", end - start))
+
+      INFO("== Producing output - END ==")
 
       return(htmltools_value(catalogue_table, ft.align = "left"))
     })
