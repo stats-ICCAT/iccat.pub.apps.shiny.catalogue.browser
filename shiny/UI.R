@@ -42,7 +42,7 @@ ui = function() {
               fluidRow(
                 column(
                   width = 12,
-                  UI_select_input("species", "Species", ALL_SPECIES, auto_select_first = TRUE)
+                  UI_select_input("species", "Species", ALL_SPECIES, selected = "BFT")
                 )
               ),
               fluidRow(
