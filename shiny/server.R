@@ -127,6 +127,8 @@ server = function(input, output, session) {
     renderUI({
       DEBUG("RUI")
 
+      validate(need(!is.null(input$species), "Please select at least one species!"))
+
       filtered_catalogue = filtered_catalogue_data()
 
       validate(
