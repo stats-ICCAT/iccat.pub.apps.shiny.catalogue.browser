@@ -140,7 +140,7 @@ server = function(input, output, session) {
         need(!is.null(filtered_catalogue) & nrow(filtered_catalogue) > 0, "Current filtering criteria do not identify any record!")
       )
 
-      future_promise({
+      future_promise(packages = "flextable", {
         INFO("Catalogue (flex)table preparation...")
 
         start = Sys.time()
@@ -149,7 +149,10 @@ server = function(input, output, session) {
           catalogue.viz.table(filtered_catalogue, truncate_years = FALSE,
                               flag_separator_width = 2,
                               default_font_size = 8,
-                              default_h_padding = 2, values_h_padding = 5) %>% padding(part = "header", padding.top = 5, padding.bottom = 5)
+                              default_h_padding = 2, values_h_padding = 5) %>%
+          padding(part = "header", padding.top = 5, padding.bottom = 5) %>%
+          font(fontname = "Arial")
+
 
         end = Sys.time()
 
