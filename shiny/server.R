@@ -130,8 +130,6 @@ server = function(input, output, session) {
 
   output$catalogue =
     renderUI({
-      DEBUG("RUI")
-
       INFO("== Producing output - START ==")
 
       validate(need(!is.null(input$species), "Please select at least one species!"))
@@ -142,23 +140,25 @@ server = function(input, output, session) {
         need(!is.null(filtered_catalogue) & nrow(filtered_catalogue) > 0, "Current filtering criteria do not identify any record!")
       )
 
-      INFO("Catalogue (flex)table preparation...")
+      future_promise({
+        INFO("Catalogue (flex)table preparation...")
 
-      start = Sys.time()
+        start = Sys.time()
 
-      catalogue_table =
-        catalogue.viz.table(filtered_catalogue, truncate_years = FALSE,
-                            flag_separator_width = 2,
-                            default_font_size = 8,
-                            default_h_padding = 2, values_h_padding = 5) %>% padding(part = "header", padding.top = 5, padding.bottom = 5)
+        catalogue_table =
+          catalogue.viz.table(filtered_catalogue, truncate_years = FALSE,
+                              flag_separator_width = 2,
+                              default_font_size = 8,
+                              default_h_padding = 2, values_h_padding = 5) %>% padding(part = "header", padding.top = 5, padding.bottom = 5)
 
-      end = Sys.time()
+        end = Sys.time()
 
-      INFO(paste0("Catalogue (flex)table preparation: ", end - start))
+        INFO(paste0("Catalogue (flex)table preparation: ", end - start))
 
-      INFO("== Producing output - END ==")
+        INFO("== Producing output - END ==")
 
-      return(htmltools_value(catalogue_table, ft.align = "left"))
+        return(htmltools_value(catalogue_table, ft.align = "left"))
+      })
     })
 
   output$downloadData = downloadHandler(
