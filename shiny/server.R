@@ -151,7 +151,7 @@ server = function(input, output, session) {
                               default_font_size = 8,
                               default_h_padding = 2, values_h_padding = 5) %>%
           padding(part = "header", padding.top = 5, padding.bottom = 5) %>%
-          font(fontname = "Arial")
+          font(part = "all", fontname = "Arial")
 
 
         end = Sys.time()
