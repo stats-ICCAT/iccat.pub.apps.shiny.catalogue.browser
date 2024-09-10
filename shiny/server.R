@@ -78,7 +78,9 @@ server = function(input, output, session) {
       catalog =
         catalogue.compile(
           FR[avgQtyRatioCum <= input$max_perc_cum / 100.0],
-          CA
+          CA,
+          catch_round_digits = 0,
+          perc_round_digits = 2
         )
         #catalog(
         #  input$species,
