@@ -79,8 +79,10 @@ server = function(input, output, session) {
         catalogue.compile(
           FR[avgQtyRatioCum <= input$max_perc_cum / 100.0],
           CA,
+          year_from = input$years[1],
+          year_to   = input$years[2],
           catch_round_digits = 0,
-          perc_round_digits = 2
+          perc_round_digits  = 2
         )
         #catalog(
         #  input$species,
