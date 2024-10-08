@@ -24,6 +24,9 @@ RUN install2.r --error --skipinstalled \
     promises \
     future
 
+RUN install2.r --error --skipinstalled \
+    systemfonts
+
 # Sets the working directory to the shiny-server root folder
 WORKDIR /srv/shiny-server
 
