@@ -144,7 +144,7 @@ server = function(input, output, session) {
         need(!is.null(filtered_catalogue) & nrow(filtered_catalogue) > 0, "Current filtering criteria do not identify any record!")
       )
 
-      future_promise(packages = "flextable", {
+      future_promise(packages = "flextable", seed = NULL, {
         INFO("Catalogue (flex)table preparation...")
 
         start = Sys.time()
