@@ -1,5 +1,5 @@
 ui = function() {
-  TITLE = paste0("ICCAT / Task 1 & 2 / catalogue / ", META$LAST_UPDATE)
+  TITLE = "ICCAT / Task 1 & 2 / catalogue"
   return(
     fluidPage(
       title = TITLE,
